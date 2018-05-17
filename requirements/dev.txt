@@ -1,0 +1,6 @@
+bumpversion==0.5.3
+wheel==0.30.0
+
+-r docs.txt
+-r package.txt
+-r test.txt
