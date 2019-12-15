@@ -3,4 +3,4 @@
 -r requirements/dev.txt
 
 django==3.0
-pypandoc
+pypandoc==1.4
