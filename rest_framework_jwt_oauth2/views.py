@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from datetime import datetime
-from urllib.parse import urlencode
+
+from six.moves.urllib.parse import urlencode
 
 from django.utils.decorators import method_decorator
 from drf_yasg.utils import swagger_auto_schema

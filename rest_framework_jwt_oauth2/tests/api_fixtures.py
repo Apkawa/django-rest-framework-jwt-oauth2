@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
-import contextlib
 import json
-import types
 
 import pytest
 import six
@@ -36,7 +34,7 @@ class JWTApiTestClient(Client):
         return self.defaults['HTTP_HOST']
 
     def _base_environ(self, **request):
-        env = super()._base_environ(**request)
+        env = super(JWTApiTestClient, self)._base_environ(**request)
         if env.get('force_https'):
             env['wsgi.url_scheme'] = 'https'
         return env

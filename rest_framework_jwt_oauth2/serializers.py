@@ -28,7 +28,7 @@ def oauth2_authorize(request, provider, code=None, access_token=None, redirect_u
             lambda request, app: _redirect_url)(
             redirect_uri)
     else:
-        adapter.get_callback_url = lambda request, app: reverse(f'{provider}_complete',
+        adapter.get_callback_url = lambda request, app: reverse('%s_complete' % provider,
                                                                 request=request)
     app = adapter.get_provider().get_app(request)
     client = oauth_view.get_client(request, app)
