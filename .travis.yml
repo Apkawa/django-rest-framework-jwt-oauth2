@@ -6,6 +6,7 @@ python:
     - "3.5"
     - "3.6"
     - "3.7"
+    - "3.8"
 install: pip install tox-travis python-coveralls codecov
 script: tox -- -v --cov rest_framework_jwt_oauth2 --cov-report term-missing --flake8
 after_success:

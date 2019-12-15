@@ -23,7 +23,9 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.auth',
     'django.contrib.admin',
-
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'rest_framework_jwt_oauth2',
     'tests',
 ]
@@ -39,3 +41,5 @@ MIDDLEWARE_CLASSES = (
 USE_TZ = True
 
 SECRET_KEY = 'easy'
+
+ROOT_URLCONF = 'tests.urls'
