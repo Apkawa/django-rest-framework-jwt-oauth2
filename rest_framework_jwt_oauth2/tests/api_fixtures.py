@@ -6,7 +6,7 @@ import six
 from django.contrib.auth.models import User
 from django.test.client import Client, MULTIPART_CONTENT
 from django.urls import reverse, NoReverseMatch
-from django.utils.encoding import smart_text
+from django.utils.encoding import smart_text, smart_str
 from rest_framework_jwt.serializers import jwt_payload_handler, jwt_encode_handler, \
     jwt_decode_handler
 
@@ -100,7 +100,7 @@ class JWTApiTestClient(Client):
         response = super(JWTApiTestClient, self).request(**request)
         if assert_code:
             assert assert_code == response.status_code, smart_text(response.content)
-        response.json = lambda: json.loads(response.content)
+        response.json = lambda: json.loads(smart_str(response.content))
         response.token = lambda: response.get('Access-Token')
         if update_token and response.token():
             self.set_jwt_token(response.token())
