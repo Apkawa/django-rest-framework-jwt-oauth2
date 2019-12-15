@@ -2,5 +2,5 @@
 -r requirements/test.txt
 -r requirements/dev.txt
 
-django>=1.11,<2
-pypandoc
+django==3.0
+pypandoc==1.4

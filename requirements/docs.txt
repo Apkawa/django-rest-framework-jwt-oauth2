@@ -1,5 +1,5 @@
-recommonmark
-Sphinx
-recommonmark
-alabaster
+recommonmark==0.6.0
+Sphinx==2.2.2
+recommonmark==0.6.0
+alabaster==0.7.12
 
