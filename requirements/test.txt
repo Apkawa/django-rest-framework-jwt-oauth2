@@ -1,5 +1,5 @@
 pytest==5.3.2
-pytest-django
+pytest-django==3.7.0
 pytest-pythonpath
 pytest-flake8
 pytest-cov
