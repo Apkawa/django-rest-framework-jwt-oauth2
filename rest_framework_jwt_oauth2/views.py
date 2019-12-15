@@ -6,7 +6,6 @@ from django.utils.decorators import method_decorator
 from drf_yasg.utils import swagger_auto_schema
 from rest_framework import serializers
 from rest_framework.response import Response
-from rest_framework.reverse import reverse
 from rest_framework.views import APIView
 from rest_framework_jwt.serializers import (
     VerificationBaseSerializer, JSONWebTokenSerializer,
@@ -19,9 +18,8 @@ from rest_framework_jwt.views import (
 )
 
 from rest_framework_jwt_oauth2.utils.serializers import serializer_factory
-from .serializers import OAuth2JSONWebTokenSerializer
-
 from . import app_settings
+from .serializers import OAuth2JSONWebTokenSerializer
 
 
 class JSONWebTokenAPIView(_JSONWebTokenAPIView):
@@ -34,8 +32,7 @@ class JSONWebTokenAPIView(_JSONWebTokenAPIView):
         response_data = jwt_response_payload_handler(token, user, request)
         response = Response(response_data)
         if api_settings.JWT_AUTH_COOKIE:
-            expiration = (datetime.utcnow() +
-                          api_settings.JWT_EXPIRATION_DELTA)
+            expiration = datetime.utcnow() + api_settings.JWT_EXPIRATION_DELTA
             response.set_cookie(api_settings.JWT_AUTH_COOKIE,
                                 token,
                                 expires=expiration,

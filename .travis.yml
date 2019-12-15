@@ -1,5 +1,6 @@
 sudo: false
 language: python
+
 python:
     - "2.7"
     - "3.4"
@@ -7,6 +8,24 @@ python:
     - "3.6"
     - "3.7"
     - "3.8"
+env:
+  - DJANGO=1.8
+  - DJANGO=1.11
+  - DJANGO=2.2
+  - DJANGO=3.0
+
+exclude:
+  # Python/Django combinations that aren't officially supported
+  - { env: DJANGO=1.11, python: 3.7 }
+  - { env: DJANGO=2.1, python: 2.7 }
+  - { env: DJANGO=2.1, python: 3.4 }
+  - { env: DJANGO=2.2, python: 2.7 }
+  - { env: DJANGO=2.2, python: 3.4 }
+  - { env: DJANGO=3.0, python: 2.7 }
+  - { env: DJANGO=3.0, python: 3.4 }
+  - { env: DJANGO=3.0, python: 3.5 }
+
+
 install: pip install tox-travis python-coveralls codecov
 script: tox -- -v --cov rest_framework_jwt_oauth2 --cov-report term-missing --flake8
 after_success:
