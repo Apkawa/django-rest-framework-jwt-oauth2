@@ -1,6 +1,7 @@
 bumpversion==0.5.3
 wheel==0.30.0
 tox
+twine
 
 -r docs.txt
 -r package.txt

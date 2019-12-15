@@ -50,10 +50,16 @@ pytest
 tox
 ```
 
+## Update version
+
+```bash
+python setup.py bumpversion
+```
+
 ## publish pypi
 
 ```bash
-python setup.py sdist upload -r pypi
+python setup.py publish
 ```
 
 

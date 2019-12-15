@@ -15,8 +15,8 @@ if sys.argv[-1] == 'publish':
     except ImportError:
         print('Wheel library missing. Please run "pip install wheel"')
         sys.exit()
-    os.system('python setup.py sdist upload')
-    os.system('python setup.py bdist_wheel upload')
+    os.system('python setup.py sdist bdist_wheel')
+    os.system('twine upload dist/*')
     sys.exit()
 
 if sys.argv[1] == 'bumpversion':
@@ -52,7 +52,13 @@ setup(
     author="Apkawa",
     author_email='apkawa@gmail.com',
     packages=[package for package in find_packages() if package.startswith(app_name)],
-    install_requires=['six'],
+    install_requires=[
+        'six',
+        'djangorestframework>=3.7,<4.0',
+        'drf-yasg>=1.4,<2.0',
+        'djangorestframework-jwt>=1.11,<2.0',
+        'django-allauth>=0.36,<1.0'
+    ],
     zip_safe=False,
     include_package_data=True,
     keywords=['django'],
