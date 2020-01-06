@@ -22,14 +22,16 @@ pip install -e git+https://githib.com/Apkawa/django-rest-framework-jwt-oauth2.gi
 
 ## Django and python version
 
-* python-2.7 - django>=1.8,<=1.11
-* python-3.4 - django>=1.8,<=1.11
-* python-3.5 - django>=1.8,<=1.11
-* python-3.6 - django>=1.11
+| Python<br/>Django |        3.5         |      3.6           |      3.7           |       3.8          |
+|:-----------------:|--------------------|--------------------|--------------------|--------------------|
+| 1.8               |       :x:          |      :x:           |       :x:          |      :x:           |
+| 1.11              | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |      :x:           |
+| 2.2               | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| 3.0               |       :x:          | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+
 
 
 # Usage
-
 
 
 # Contributing
@@ -37,7 +39,7 @@ pip install -e git+https://githib.com/Apkawa/django-rest-framework-jwt-oauth2.gi
 ## run example app
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements-dev.txt
 ./test/manage.py migrate
 ./test/manage.py runserver
 ```
@@ -45,7 +47,7 @@ pip install -r requirements.txt
 ## run tests
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements-dev.txt
 pytest
 tox
 ```

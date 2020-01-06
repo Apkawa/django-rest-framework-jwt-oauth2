@@ -1,4 +1,0 @@
--r requirements/test.txt
--r requirements/dev.txt
-
-django==3.0

@@ -1,8 +1,0 @@
-bumpversion==0.5.3
-wheel==0.33.6
-tox==3.14.2
-twine==3.1.1
-
--r docs.txt
--r package.txt
--r test.txt
